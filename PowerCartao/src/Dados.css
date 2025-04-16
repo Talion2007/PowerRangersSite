@@ -1,0 +1,74 @@
+.dados-container {
+  position: relative;
+  height: 150vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background: url('./assets/banner.jpg') no-repeat center center; /* Replace with your image path */
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.dados-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the form container */
+  max-width: 600px;
+  width: 90%;
+  text-align: left;
+}
+
+.dados-content h1,
+.dados-content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.dados-content label {
+  display: block;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.dados-content input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.8); /* White shadow behind inputs */
+}
+
+.dados-content button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.dados-content button:hover {
+  background-color: #cc0000;
+}
