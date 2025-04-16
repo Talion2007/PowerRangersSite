@@ -50,7 +50,7 @@ const Dados = () => {
           <label>
             Número do Cartão:
             <input
-              type="text"
+              type="number"
               name="cardNumber"
               value={formData.cardNumber}
               onChange={handleChange}
@@ -60,7 +60,7 @@ const Dados = () => {
           <label>
             Data de Validade:
             <input
-              type="text"
+              type="date"
               name="expirationDate"
               value={formData.expirationDate}
               onChange={handleChange}
@@ -70,7 +70,7 @@ const Dados = () => {
           <label>
             CVV:
             <input
-              type="text"
+              type="number"
               name="cvv"
               value={formData.cvv}
               onChange={handleChange}
@@ -91,7 +91,7 @@ const Dados = () => {
           <label>
             Número da Conta:
             <input
-              type="text"
+              type="number"
               name="accountNumber"
               value={formData.accountNumber}
               onChange={handleChange}
@@ -111,7 +111,7 @@ const Dados = () => {
           <label>
             Número de Roteamento:
             <input
-              type="text"
+              type="number"
               name="routingNumber"
               value={formData.routingNumber}
               onChange={handleChange}

@@ -2,8 +2,11 @@
   position: relative;
   height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
-  background: url('./assets/powerima.jpg') no-repeat center center; 
-  background-size: 105%; /* Cover the entire container */
+  background: url("./assets/powerima.jpg") no-repeat center center;
+  background-position: center;
+  background-size: auto 120vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,6 +38,7 @@
 .hero-content {
   position: relative;
   z-index: 2;
+  padding: 3em;
 }
 
 .hero-content h1 {
