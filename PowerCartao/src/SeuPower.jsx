@@ -26,6 +26,8 @@ function SeuPower() {
 
     return (
         <div className="home-container">
+                  <div className='gradient-overlay'></div>
+            <div className='hero-content'>
             <h1 className="home-title">Qual Power Ranger Você É?</h1>
             {selectedRanger && (
                 <div style={{ marginTop: "20px", textAlign: "center" }}>
@@ -39,6 +41,7 @@ function SeuPower() {
                     </h2>
                 </div>
             )}
+            </div>
         </div>
     );
 }

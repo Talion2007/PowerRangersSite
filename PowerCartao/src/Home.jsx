@@ -12,6 +12,8 @@ function Home() {
 
   return (
     <div className="home-container">
+      <div className='gradient-overlay'></div>
+      <div className='hero-content'>
       <h1 className="home-title">Bem-vindo ao Mundo dos Power Rangers!</h1>
       <div className="image-container">
         <div className="gradient-top"></div>
@@ -26,6 +28,7 @@ function Home() {
         >
           Descubra qual Power Ranger você é!
         </button>
+        </div>
       </div>
     </div>
   );
