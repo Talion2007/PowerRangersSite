@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Powerim from './assets/Powerim.jpg'; // Import the image
 import './Home.css'; // Import the CSS file
+
 function Home() {
   const navigate = useNavigate();
 

@@ -1,9 +1,9 @@
 .home-container {
   position: relative;
-  height: 130vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
   background: url('./assets/powerima.jpg') no-repeat center center; 
-  background-size: cover;
+  background-size: 105%; /* Cover the entire container */
   display: flex;
   align-items: center;
   justify-content: center;

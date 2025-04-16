@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import RedRanger from "./assets/red.png"
-import BlueRanger from "./assets/blue.png"
-import YellowRanger from "./assets/yellow.png"
-import PinkRanger from "./assets/pink.png"
-import GreenRanger from "./assets/green.png"
-import GoldenRanger from "./assets/golden.png"
-
+import React, { useState, useEffect } from "react";
+import RedRanger from "./assets/red.png";
+import BlueRanger from "./assets/blue.png";
+import YellowRanger from "./assets/yellow.png";
+import PinkRanger from "./assets/pink.png";
+import GreenRanger from "./assets/green.png";
+import GoldenRanger from "./assets/golden.png";
+import './Home.css'; // Reutilizando o CSS da Home
 
 const rangers = [
     { name: "Red Ranger", image: RedRanger },
@@ -19,21 +19,24 @@ const rangers = [
 function SeuPower() {
     const [selectedRanger, setSelectedRanger] = useState(null);
 
-    const sortearRanger = () => {
+    useEffect(() => {
         const randomIndex = Math.floor(Math.random() * rangers.length);
         setSelectedRanger(rangers[randomIndex]);
-    };
+    }, []);
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h1>Sortear um Power Ranger</h1>
-            <button onClick={sortearRanger} style={{ padding: "10px 20px", fontSize: "16px" }}>
-                Sortear
-            </button>
+        <div className="home-container">
+            <h1 className="home-title">Qual Power Ranger Você É?</h1>
             {selectedRanger && (
-                <div style={{ marginTop: "20px" }}>
-                    <h2>Seu Ranger é: {selectedRanger.name}</h2>
-                    <img src={selectedRanger.image} alt={selectedRanger.name} style={{ width: "200px", height: "auto" }} />
+                <div style={{ marginTop: "20px", textAlign: "center" }}>
+                    <img 
+                        src={selectedRanger.image} 
+                        alt={selectedRanger.name} 
+                        style={{ width: "25em", height: "auto", borderRadius: "10px", border: "2px solid #ddd" }} 
+                    />
+                    <h2 style={{ color: "#fff", textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>
+                        Seu Ranger é: {selectedRanger.name}
+                    </h2>
                 </div>
             )}
         </div>
