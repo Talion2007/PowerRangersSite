@@ -2,12 +2,22 @@
   position: relative;
   height: 150vh; /* Full viewport height */
   width: 100vw; /* Full viewport width */
-  background: url('./assets/banner.jpg') no-repeat center center; /* Replace with your image path */
+  background: url('./assets/powerima.jpg') no-repeat center center; 
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
+  animation: background-pan 10s infinite linear; /* Background animation */
+}
+
+@keyframes background-pan {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .gradient-overlay {
@@ -30,6 +40,18 @@
   max-width: 600px;
   width: 90%;
   text-align: left;
+  animation: fadeInUp 1s ease-out; /* Entrance animation */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start slightly below */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
 }
 
 .dados-content h1,
@@ -52,6 +74,16 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(255, 255, 255, 0.8); /* White shadow behind inputs */
+  animation: glow 1.5s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.8);
+  }
+  to {
+    box-shadow: 0 2px 15px rgba(255, 255, 255, 1);
+  }
 }
 
 .dados-content button {

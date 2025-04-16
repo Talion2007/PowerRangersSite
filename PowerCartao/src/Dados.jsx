@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Dados.css'; // Import the CSS file
 
 const Dados = () => {
@@ -13,6 +14,8 @@ const Dados = () => {
     routingNumber: '',
   });
 
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -24,6 +27,7 @@ const Dados = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
+    navigate('/seu-power'); // Redirect to the "Seu Power" page
   };
 
   return (
