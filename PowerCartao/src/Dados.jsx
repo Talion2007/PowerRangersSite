@@ -129,7 +129,7 @@ const Dados = () => {
               maxLength="16"
               required
             />
-            {errors.cardNumber && <div className="error">{errors.cardNumber}</div>}
+            {errors.cardNumber && <div className="error" style={{ color: 'red' }}>{errors.cardNumber}</div>}
           </label>
           <label>
             Data de Validade:
@@ -140,7 +140,7 @@ const Dados = () => {
               onChange={handleChange}
               required
             />
-            {errors.expirationDate && <div className="error">{errors.expirationDate}</div>}
+            {errors.expirationDate && <div className="error" style={{ color: 'red' }}>{errors.expirationDate}</div>}
           </label>
           <label>
             CVV:
@@ -152,7 +152,7 @@ const Dados = () => {
               maxLength="3"
               required
             />
-            {errors.cvv && <div className="error">{errors.cvv}</div>}
+            {errors.cvv && <div className="error" style={{ color: 'red' }}>{errors.cvv}</div>}
           </label>
 
           <h2>Informações da Conta Bancária</h2>
@@ -176,7 +176,7 @@ const Dados = () => {
               maxLength="10"
               required
             />
-            {errors.accountNumber && <div className="error">{errors.accountNumber}</div>}
+            {errors.accountNumber && <div className="error" style={{ color: 'red' }}>{errors.accountNumber}</div>}
           </label>
           <label>
             Nome do Banco:
